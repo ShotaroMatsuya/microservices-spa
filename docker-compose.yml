@@ -5,10 +5,20 @@ services:
       context: ./products
       dockerfile: Dockerfile
     ports:
-      - '80:8081'
+      - '81:8081'
     volumes:
       - ./products:/app
       - /app/node_modules
+  container:
+    build:
+      context: ./container
+      dockerfile: Dockerfile
+    ports:
+      - '80:8080'
+    volumes:
+      - ./container:/app
+      - /app/node_modules
+  
   npm:
     image: node:14
     working_dir: /app
