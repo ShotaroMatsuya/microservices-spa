@@ -9,6 +9,16 @@ services:
     volumes:
       - ./products:/app
       - /app/node_modules
+  cart:
+    build: 
+      context: ./cart
+      dockerfile: Dockerfile
+    ports:
+      - '82:8082'
+    volumes:
+      - ./cart:/app
+      - /app/node_modules
+  
   container:
     build:
       context: ./container
@@ -20,6 +30,7 @@ services:
       - /app/node_modules
     depends_on:
       - products
+      - cart
   
   npm:
     image: node:14
