@@ -11,6 +11,7 @@ module.exports = {
       name: 'container',
       remotes: {
         products: 'products@http://localhost:81/remoteEntry.js',
+        cart: 'cart@http://localhost:82/remoteEntry.js',
       },
     }),
     new HtmlWebpackPlugin({
