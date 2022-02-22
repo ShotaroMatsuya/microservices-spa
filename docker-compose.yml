@@ -37,7 +37,9 @@ services:
     working_dir: /app
     entrypoint: ['npm']
     volumes:
+    # install対象を指定する
       - ./products:/app
+      - ./cart:/app
 
   # backend:
   #   build: ./backend
