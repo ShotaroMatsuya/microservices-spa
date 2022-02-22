@@ -18,6 +18,8 @@ services:
     volumes:
       - ./container:/app
       - /app/node_modules
+    depends_on:
+      - products
   
   npm:
     image: node:14
