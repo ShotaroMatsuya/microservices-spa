@@ -5,6 +5,7 @@ module.exports = {
   mode: 'development',
   devServer: {
     port: 8082,
+    host: '0.0.0.0',
   },
   plugins: [
     new ModuleFederationPlugin({
